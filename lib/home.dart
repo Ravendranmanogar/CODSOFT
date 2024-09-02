@@ -3,7 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:quote/favorite_page.dart';
+
 import 'package:share_plus/share_plus.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
@@ -19,11 +19,12 @@ class _HomePagesState extends State<HomePages> {
   final TextEditingController _Textcontroller = TextEditingController();
 
   @override
-  List<String> favoriteItems = [];
+  //List<String> favoriteItems = [];
   void initState() {
     super.initState();
-    _Textcontroller.text = "Tap to generate a quote";
-    _loadSavedData();  // Load saved data when the app starts
+    _Textcontroller.text = "Loading quote....";
+    _loadSavedData();
+    _updateQuoteOnceADay();// Load saved data when the app starts
   }
 
   void _loadSavedData() async {
@@ -35,14 +36,14 @@ class _HomePagesState extends State<HomePages> {
   void _saveData() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     await prefs.setString('savedText', _Textcontroller.text);
-    favoriteItems.add('Favorite Item ${favoriteItems.length + 1}');
+    //favoriteItems.add('Favorite Item ${favoriteItems.length + 1}');
     // Data is saved locally
   }
   // void initState() {
   //   super.initState();
   //   _Textcontroller.text = "Tap to generate a quote";
   // }
-  Future<void> _getRandomQuote() async {
+  Future<void> _updateQuoteOnceADay() async {
     final prefs = await SharedPreferences.getInstance();
     final lastFetchedTime = prefs.getInt('lastFetchedTime');
     final currentTime = DateTime.now().millisecondsSinceEpoch;
@@ -119,7 +120,7 @@ class _HomePagesState extends State<HomePages> {
                       borderRadius: BorderRadius.circular(10),
                       color: Colors.blueAccent
                   ),
-                  child: TextButton(onPressed: _getRandomQuote, child:Text("Generate",
+                  child: TextButton(onPressed:(){}, child:Text("ate",
                     style: TextStyle(color: Colors.white,fontSize: 16.sp,fontWeight: FontWeight.w500),),
                   ),
                 ),

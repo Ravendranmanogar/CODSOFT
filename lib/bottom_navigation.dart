@@ -19,7 +19,7 @@ class _BottomNavExampleState extends State<BottomNavExample> {
 
      const HomePages(),
      const FavoritePage(Text:''),
-     const HomePages(),
+     const ReloadPage(),
   ];
 
   void _onItemTapped(int index) {
