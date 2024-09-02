@@ -15,13 +15,11 @@ class BottomNavExample extends StatefulWidget {
 class _BottomNavExampleState extends State<BottomNavExample> {
   int _selectedIndex = 0;
 
-  static const List<Widget> _widgetOptions = <Widget>[
-    //Text('Home Page'),
-    //Text('Search Page'),
-    //Text('Profile Page'),
-     HomePages(),
-     FavoritePage(),
-     HomePages(),
+  static  List<Widget> _widgetOptions = <Widget>[
+
+     const HomePages(),
+     const FavoritePage(Text:''),
+     const HomePages(),
   ];
 
   void _onItemTapped(int index) {
