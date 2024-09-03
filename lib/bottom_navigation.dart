@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:quote/favorite_page.dart';
+import 'package:quote/favorite_pages.dart';
 import 'package:quote/home.dart';
 import 'package:quote/home_page.dart';
 import 'package:quote/reload_page.dart';
@@ -15,10 +14,10 @@ class BottomNavExample extends StatefulWidget {
 class _BottomNavExampleState extends State<BottomNavExample> {
   int _selectedIndex = 0;
 
-  static  List<Widget> _widgetOptions = <Widget>[
+  static  final List<Widget> _widgetOptions = <Widget>[
 
      const HomePages(),
-     const FavoritePage(Text:''),
+       Favoritepage(),
      const ReloadPage(),
   ];
 
