@@ -15,6 +15,7 @@ class HomePages extends StatefulWidget {
   State<HomePages> createState() => _HomePagesState();
 }
 
+
 class _HomePagesState extends State<HomePages> {
   String _Textcontroller = '';
 
@@ -22,7 +23,7 @@ class _HomePagesState extends State<HomePages> {
   void initState() {
     super.initState();
     _Textcontroller = "Loading quote....";
-    _updateQuoteOnceADay(); // Load the quote when the app starts
+    _updateQuoteOnceADay();
   }
 
   void _saveQuote() async {

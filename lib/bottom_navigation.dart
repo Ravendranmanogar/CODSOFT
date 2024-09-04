@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quote/favorite_pages.dart';
 import 'package:quote/home.dart';
-import 'package:quote/home_page.dart';
+
 import 'package:quote/reload_page.dart';
 
 class BottomNavExample extends StatefulWidget {

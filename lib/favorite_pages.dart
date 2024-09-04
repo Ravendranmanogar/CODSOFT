@@ -13,7 +13,7 @@ class _FavoritePageState extends State<Favoritepage> {
   @override
   void initState() {
     super.initState();
-    _loadSavedData();  // Load the saved data when the page initializes
+    _loadSavedData();
   }
 
   void _loadSavedData() async {
@@ -24,11 +24,12 @@ class _FavoritePageState extends State<Favoritepage> {
     print("Saved Quotes: $savedItems");
   }
 
+
   void _removeItem(int index) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      savedItems.removeAt(index);  // Remove the item at the specified index
-      prefs.setStringList('savedQuotes', savedItems);  // Update the saved list
+      savedItems.removeAt(index);
+      prefs.setStringList('savedQuotes', savedItems);
     });
   }
 
@@ -55,7 +56,7 @@ class _FavoritePageState extends State<Favoritepage> {
               ],
             ),
             SizedBox(height: 20.h),
-            // Display each item in a list of Containers
+
             for (int i = 0; i < savedItems.length; i++)
               Container(
                 width: 275.w,
@@ -71,7 +72,7 @@ class _FavoritePageState extends State<Favoritepage> {
                       child: Padding(
                         padding:  EdgeInsets.fromLTRB(12.w, 20.h, 12.w, 20.h),
                         child: Text(
-                          savedItems[i],  // Display the item
+                          savedItems[i],
                           style:  TextStyle(
                             color: Colors.black,
                             fontSize: 20.sp,
@@ -84,7 +85,7 @@ class _FavoritePageState extends State<Favoritepage> {
                     IconButton(
                       icon: const Icon(Icons.delete, color: Colors.red),
                       onPressed: () {
-                        _removeItem(i);  // Remove the specific item
+                        _removeItem(i);
                       },
                     ),
                   ],

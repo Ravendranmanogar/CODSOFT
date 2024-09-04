@@ -13,10 +13,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return  const Scaffold(
-      //backgroundColor: Colors.blueAccent,
+
 
       body: BottomNavExample(),
-      //backgroundColor: Colors.black12,
+
 
     );
   }
