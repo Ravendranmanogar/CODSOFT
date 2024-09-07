@@ -1,5 +1,5 @@
 import 'dart:convert';
-import 'dart:ui';
+
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -31,7 +31,7 @@ class _HomePagesState extends State<HomePages> {
     List<String> savedQuotes = prefs.getStringList('savedQuotes') ?? [];
     savedQuotes.add(_Textcontroller); // Add the new quote
     await prefs.setStringList('savedQuotes', savedQuotes);
-    print("Saved Quotes: $savedQuotes");
+    //print("Saved Quotes: $savedQuotes");
   }
 
   Future<void> _updateQuoteOnceADay() async {
@@ -125,7 +125,7 @@ class _HomePagesState extends State<HomePages> {
                     onPressed: () {
                       _saveQuote(); // Save the quote
                       ScaffoldMessenger.of(context).showSnackBar(
-                        SnackBar(content: Text('Quote saved to Favorites')),
+                        const SnackBar(content: Text('Quote saved to Favorites')),
                       );
                     },
                     child: Text(

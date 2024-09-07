@@ -4,14 +4,14 @@ import 'package:quote/home.dart';
 
 import 'package:quote/reload_page.dart';
 
-class BottomNavExample extends StatefulWidget {
-  const BottomNavExample({super.key});
+class BottomNav extends StatefulWidget {
+  const BottomNav({super.key});
 
   @override
-  _BottomNavExampleState createState() => _BottomNavExampleState();
+  _BottomNavState createState() => _BottomNavState();
 }
 
-class _BottomNavExampleState extends State<BottomNavExample> {
+class _BottomNavState extends State<BottomNav> {
   int _selectedIndex = 0;
 
   static  final List<Widget> _widgetOptions = <Widget>[
